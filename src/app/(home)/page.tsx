@@ -9,6 +9,8 @@ import { ChatsCard } from "./_components/chats-card";
 import { OverviewCardsGroup } from "./_components/overview-cards";
 import { OverviewCardsSkeleton } from "./_components/overview-cards/skeleton";
 import { RegionLabels } from "./_components/region-labels";
+import { Calendar, HomeIcon, User } from "@/components/Layouts/sidebar/icons";
+import Link from "next/link";
 
 type PropsType = {
   searchParams: Promise<{
@@ -21,7 +23,7 @@ export default async function Home({ searchParams }: PropsType) {
   const extractTimeFrame = createTimeFrameExtractor(selected_time_frame);
 
   return (
-    <>
+    <div className="pb-22">
       <Suspense fallback={<OverviewCardsSkeleton />}>
         <OverviewCardsGroup />
       </Suspense>
@@ -57,6 +59,37 @@ export default async function Home({ searchParams }: PropsType) {
           <ChatsCard />
         </Suspense>
       </div>
-    </>
+
+      <div className="fixed bottom-0 left-0 flex w-full flex-col items-center justify-between bg-[#f9f9f9] min-[850px]:hidden">
+        <div className="flex w-full items-start justify-between">
+          {/* Item */}
+          <Link href="/calendar" className="w-1/3">
+            <div className="relative top-0 flex cursor-pointer flex-col items-center justify-center gap-1 border-t-4 border-[#f9f9f9] p-[16px] text-[#000] transition-all hover:top-0 hover:border-t-4 hover:text-primary">
+              <Calendar className="size-6" />
+
+              <p className="text-md font-medium">Calendar</p>
+            </div>
+          </Link>
+
+          {/* Active Item */}
+          <Link href="/" className="w-1/3">
+            <div className="relative top-0 flex cursor-pointer flex-col items-center justify-center gap-1 border-t-4 border-primary bg-[rgba(87,80,241,0.07)] p-[16px] text-primary transition-all">
+              <HomeIcon className="size-6" />
+
+              <p className="text-md font-medium text-primary">Dashboard</p>
+            </div>
+          </Link>
+
+          {/* Item */}
+          <Link href="/profile" className="w-1/3">
+            <div className="relative top-0 flex cursor-pointer flex-col items-center justify-center gap-1 border-t-4 border-[#f9f9f9] p-[16px] text-[#000] transition-all hover:top-0 hover:border-t-4 hover:text-primary">
+              <User className="size-6" />
+
+              <p className="text-md font-medium">Profile</p>
+            </div>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

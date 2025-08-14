@@ -35,13 +35,13 @@ export function UserInfo() {
             width={200}
             height={200}
           />
-          <figcaption className="flex items-center gap-1 font-medium text-dark dark:text-dark-6 max-[1024px]:sr-only">
+          <figcaption className="flex items-center gap-1 font-medium text-dark dark:text-dark-6">
             <span>{USER.name}</span>
 
             <ChevronUpIcon
               aria-hidden
               className={cn(
-                "rotate-180 transition-transform",
+                "rotate-180 transition-transform xl:flex hidden",
                 isOpen && "rotate-0",
               )}
               strokeWidth={1.5}
