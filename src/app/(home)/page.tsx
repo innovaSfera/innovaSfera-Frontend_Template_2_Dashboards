@@ -6,10 +6,16 @@ import { TopChannelsSkeleton } from "@/components/Tables/top-channels/skeleton";
 import { createTimeFrameExtractor } from "@/utils/timeframe-extractor";
 import { Suspense } from "react";
 import { ChatsCard } from "./_components/chats-card";
+import { OverviewMenuGroup } from "./_components/overview-cards/index-menu";
 import { OverviewCardsGroup } from "./_components/overview-cards";
 import { OverviewCardsSkeleton } from "./_components/overview-cards/skeleton";
 import { RegionLabels } from "./_components/region-labels";
-import { Calendar, HomeIcon, User } from "@/components/Layouts/sidebar/icons";
+import {
+  Calendar,
+  HomeIcon,
+  User,
+  PieChart,
+} from "@/components/Layouts/sidebar/icons";
 import Link from "next/link";
 
 type PropsType = {
@@ -24,6 +30,10 @@ export default async function Home({ searchParams }: PropsType) {
 
   return (
     <div className="pb-22">
+      <Suspense fallback={<OverviewCardsSkeleton />}>
+        <OverviewMenuGroup />
+      </Suspense>
+
       <Suspense fallback={<OverviewCardsSkeleton />}>
         <OverviewCardsGroup />
       </Suspense>
@@ -60,7 +70,7 @@ export default async function Home({ searchParams }: PropsType) {
         </Suspense>
       </div>
 
-      <div className="fixed bottom-0 left-0 flex w-full flex-col items-center justify-between bg-[#f9f9f9] min-[850px]:hidden">
+      <div className="fixed bottom-0 left-0 flex w-full flex-col items-center justify-between bg-[#f9f9f9] xl:hidden">
         <div className="flex w-full items-start justify-between">
           {/* Item */}
           <Link href="/calendar" className="w-1/3">
@@ -86,6 +96,15 @@ export default async function Home({ searchParams }: PropsType) {
               <User className="size-6" />
 
               <p className="text-md font-medium">Profile</p>
+            </div>
+          </Link>
+
+          {/* Item */}
+          <Link href="/charts/basic-chart" className="w-1/3">
+            <div className="relative top-0 flex cursor-pointer flex-col items-center justify-center gap-1 border-t-4 border-[#f9f9f9] p-[16px] text-[#000] transition-all hover:top-0 hover:border-t-4 hover:text-primary">
+              <PieChart className="size-6" />
+
+              <p className="text-md font-medium">Charts</p>
             </div>
           </Link>
         </div>
