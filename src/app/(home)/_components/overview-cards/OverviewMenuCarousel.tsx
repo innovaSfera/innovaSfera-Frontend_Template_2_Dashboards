@@ -15,7 +15,7 @@ export function OverviewMenuCarousel() {
   return (
     <>
       <div className="mb-4 block xl:hidden">
-        <Swiper spaceBetween={16} slidesPerView={3.15} grabCursor={true}>
+        <Swiper spaceBetween={16} slidesPerView={2.30} grabCursor={true}>
           <SwiperSlide key="form">
             <Link href="/forms/form-elements">
               <OverviewCard2 label="Form" data="Form" Icon={Alphabet} />
