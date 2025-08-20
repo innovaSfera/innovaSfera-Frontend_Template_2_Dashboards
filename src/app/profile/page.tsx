@@ -2,22 +2,10 @@
 
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Image from "next/image";
-
 import { useState } from "react";
 import { CameraIcon } from "./_components/icons";
 import { SocialAccounts } from "./_components/social-accounts";
-
-import {
-  Calendar,
-  HomeIcon,
-  User,
-  PieChart,
-} from "@/components/Layouts/sidebar/icons";
-import Link from "next/link";
-
-import { Suspense } from "react";
-import { OverviewMenuGroup } from "../(home)/_components/overview-cards/index-menu";
-import { OverviewCardsSkeleton } from "../(home)/_components/overview-cards/skeleton";
+import MenuMobile from "@/components/MenuMobile";
 
 export default function Page() {
   const [data, setData] = useState({
@@ -52,10 +40,9 @@ export default function Page() {
   return (
     <>
       <div className="mx-auto w-full max-w-[970px] pb-22">
-        <Suspense fallback={<OverviewCardsSkeleton />}>
-          <OverviewMenuGroup />
-        </Suspense>
-
+        
+       
+  
         <Breadcrumb pageName="Profile" />
 
         <div className="overflow-hidden rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">
@@ -168,55 +155,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="fixed bottom-0 left-0 flex w-full flex-col items-center justify-between bg-[#f9f9f9] xl:hidden">
-        <div className="flex w-full items-start justify-between">
-          {/* Botão central */}
-          <div className="absolute -top-7 left-1/2 z-9999 -translate-x-1/2">
-            <Link
-              href="/"
-              className="flex h-14 w-14 items-center justify-center rounded-full bg-black shadow-lg"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-green-400 to-yellow-400"></div>
-            </Link>
-          </div>
-          
-          {/* Item */}
-          <Link href="/calendar" className="w-1/3">
-            <div className="relative top-0 flex cursor-pointer flex-col items-center justify-center gap-1 border-t-4 border-[#f9f9f9] p-[16px] text-[#000] transition-all hover:top-0 hover:border-t-4 hover:text-primary">
-              <Calendar className="size-6" />
-
-              <p className="text-md font-medium">Calendar</p>
-            </div>
-          </Link>
-
-          {/* Item */}
-          <Link href="/" className="w-1/3">
-            <div className="relative top-0 flex cursor-pointer flex-col items-center justify-center gap-1 border-t-4 border-[#f9f9f9] p-[16px] text-[#000] transition-all hover:top-0 hover:border-t-4 hover:text-primary">
-              <HomeIcon className="size-6" />
-
-              <p className="text-md font-medium">Dashboard</p>
-            </div>
-          </Link>
-
-          {/* Active Item */}
-          <Link href="/profile" className="w-1/3">
-            <div className="relative top-0 flex cursor-pointer flex-col items-center justify-center gap-1 border-t-4 border-primary bg-[rgba(87,80,241,0.07)] p-[16px] text-primary transition-all">
-              <User className="size-6" />
-
-              <p className="text-md font-medium text-primary">Profile</p>
-            </div>
-          </Link>
-
-          {/* Item */}
-          <Link href="/charts/basic-chart" className="w-1/3">
-            <div className="relative top-0 flex cursor-pointer flex-col items-center justify-center gap-1 border-t-4 border-[#f9f9f9] p-[16px] text-[#000] transition-all hover:top-0 hover:border-t-4 hover:text-primary">
-              <PieChart className="size-6" />
-
-              <p className="text-md font-medium">Charts</p>
-            </div>
-          </Link>
-        </div>
-      </div>
+      <MenuMobile />
     </>
   );
 }

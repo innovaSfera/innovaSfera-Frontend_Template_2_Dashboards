@@ -52,7 +52,7 @@ export function UserInfo() {
 
       <DropdownContent
         className="border border-stroke bg-white shadow-md dark:border-dark-3 dark:bg-gray-dark min-[230px]:min-w-[17.5rem]"
-        align="end"
+        align="start"
       >
         <h2 className="sr-only">User information</h2>
 
