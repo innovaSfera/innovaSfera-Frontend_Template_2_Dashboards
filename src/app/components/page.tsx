@@ -1,18 +1,10 @@
+import { Mic, AudioWaveform, Plus } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { InvoiceTable } from "@/components/Tables/invoice-table";
-import { TopChannels } from "@/components/Tables/top-channels";
-import { TopChannelsSkeleton } from "@/components/Tables/top-channels/skeleton";
-import { TopProducts } from "@/components/Tables/top-products";
-import { TopProductsSkeleton } from "@/components/Tables/top-products/skeleton";
-import { Metadata } from "next";
 import { Suspense } from "react";
 import { OverviewMenuGroup } from "../(home)/_components/overview-cards/index-menu";
 import { OverviewCardsSkeleton } from "../(home)/_components/overview-cards/skeleton";
 import MenuMobile from "@/components/MenuMobile";
-
-export const metadata: Metadata = {
-  title: "Components",
-};
+import InputGPT from "@/components/InputGPT";
 
 const ComponentsPage = () => {
   return (
@@ -24,7 +16,25 @@ const ComponentsPage = () => {
       <Breadcrumb pageName="Components" />
 
       <div className="space-y-10 pb-24">
-        <p>Aqui vai componentes</p>
+        <div className="flex w-full items-center justify-center">
+          <div className="flex w-full items-center rounded-full bg-[#1e1e1e] px-4 py-2 shadow-md">
+            {/* Ícone da esquerda */}
+
+            <button className="mr-2 rounded-full p-2 transition hover:bg-[#2a2a2a]">
+              <Plus className="h-5 w-5 text-gray-400" />
+            </button>
+
+            <InputGPT />
+
+            {/* Botões */}
+            <button className="rounded-full p-2 transition hover:bg-[#2a2a2a]">
+              <Mic className="h-5 w-5 text-gray-300" />
+            </button>
+            <button className="rounded-full p-2 transition hover:bg-[#2a2a2a]">
+              <AudioWaveform className="h-5 w-5 text-gray-300" />
+            </button>
+          </div>
+        </div>
       </div>
 
       <MenuMobile />
