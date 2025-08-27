@@ -20,7 +20,7 @@ export default function SettingsPage() {
 
       <Breadcrumb pageName="Settings" />
 
-      <div className="grid grid-cols-5 gap-8">
+      <div className="grid grid-cols-5 gap-8 pb-24">
         <div className="col-span-5 xl:col-span-3">
           <PersonalInfoForm />
         </div>

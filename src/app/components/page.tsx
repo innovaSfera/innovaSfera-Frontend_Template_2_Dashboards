@@ -11,28 +11,20 @@ import { OverviewCardsSkeleton } from "../(home)/_components/overview-cards/skel
 import MenuMobile from "@/components/MenuMobile";
 
 export const metadata: Metadata = {
-  title: "Tables",
+  title: "Components",
 };
 
-const TablesPage = () => {
+const ComponentsPage = () => {
   return (
     <>
       <Suspense fallback={<OverviewCardsSkeleton />}>
         <OverviewMenuGroup />
       </Suspense>
 
-      <Breadcrumb pageName="Tables" />
+      <Breadcrumb pageName="Components" />
 
       <div className="space-y-10 pb-24">
-        <Suspense fallback={<TopChannelsSkeleton />}>
-          <TopChannels />
-        </Suspense>
-
-        <Suspense fallback={<TopProductsSkeleton />}>
-          <TopProducts />
-        </Suspense>
-
-        <InvoiceTable />
+        <p>Aqui vai componentes</p>
       </div>
 
       <MenuMobile />
@@ -40,4 +32,4 @@ const TablesPage = () => {
   );
 };
 
-export default TablesPage;
+export default ComponentsPage;

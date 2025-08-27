@@ -27,6 +27,12 @@ export const NAV_DATA = [
         items: [],
       },
       {
+        title: "Components",
+        url: "/components",
+        icon: Icons.FourCircle,
+        items: [],
+      },
+      {
         title: "Forms",
         icon: Icons.Alphabet,
         items: [

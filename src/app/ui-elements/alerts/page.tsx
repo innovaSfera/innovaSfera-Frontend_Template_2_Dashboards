@@ -19,7 +19,7 @@ export default function Page() {
 
       <Breadcrumb pageName="Alerts" />
 
-      <div className="space-y-7.5 rounded-[10px] bg-white p-4 shadow-1 dark:bg-gray-dark dark:shadow-card md:p-6 xl:p-9">
+      <div className="pb-24 space-y-7.5 rounded-[10px] bg-white p-4 shadow-1 dark:bg-gray-dark dark:shadow-card md:p-6 xl:p-9">
         <Alert
           variant="warning"
           title="Attention Needed"

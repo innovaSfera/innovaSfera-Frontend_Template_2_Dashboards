@@ -23,7 +23,7 @@ export default async function Home({ searchParams }: PropsType) {
   const extractTimeFrame = createTimeFrameExtractor(selected_time_frame);
 
   return (
-    <div className="pb-22">
+    <div className="pb-24">
       <Suspense fallback={<OverviewCardsSkeleton />}>
         <OverviewMenuGroup />
       </Suspense>

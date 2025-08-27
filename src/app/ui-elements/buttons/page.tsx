@@ -21,7 +21,7 @@ export default function Page() {
 
       <Breadcrumb pageName="Buttons" />
 
-      <div className="space-y-10">
+      <div className="space-y-10 pb-24">
         <ShowcaseSection title="Normal Button">
           <div className="mb-7.5 flex flex-wrap gap-5 xl:gap-20">
             <Button label="Button" variant="primary" />

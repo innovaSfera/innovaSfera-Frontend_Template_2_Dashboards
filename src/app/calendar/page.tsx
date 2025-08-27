@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const CalendarPage = () => {
   return (
-    <div className="pb-22">
+    <div className="pb-24">
       <Suspense fallback={<OverviewCardsSkeleton />}>
         <OverviewMenuGroup />
       </Suspense>

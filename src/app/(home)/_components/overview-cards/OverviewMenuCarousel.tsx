@@ -17,6 +17,13 @@ export function OverviewMenuCarousel() {
 
   const menuItems = [
     {
+      key: "components",
+      href: "/components",
+      label: "Components",
+      data: "Components",
+      Icon: FourCircle,
+    },
+    {
       key: "form",
       href: "/forms/form-elements",
       label: "Form",

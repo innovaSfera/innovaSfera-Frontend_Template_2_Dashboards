@@ -39,10 +39,7 @@ export default function Page() {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-[970px] pb-22">
-        
-       
-  
+      <div className="mx-auto w-full max-w-[970px] pb-24">
         <Breadcrumb pageName="Profile" />
 
         <div className="overflow-hidden rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">
