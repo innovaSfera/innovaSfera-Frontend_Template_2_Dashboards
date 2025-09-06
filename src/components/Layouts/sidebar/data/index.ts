@@ -5,6 +5,17 @@ export const NAV_DATA = [
     label: "MAIN MENU",
     items: [
       {
+        title: "Menu",
+        url: "/menu",
+        icon: Icons.Table,
+        items: [
+          {
+            title: "Clientes",
+            url: "/clientes",
+          },
+        ],
+      },
+      {
         title: "Dashboard",
         icon: Icons.HomeIcon,
         items: [
@@ -57,6 +68,7 @@ export const NAV_DATA = [
           },
         ],
       },
+
       {
         title: "Pages",
         icon: Icons.Alphabet,

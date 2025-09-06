@@ -38,6 +38,13 @@ export function OverviewMenuCarousel() {
       Icon: Table,
     },
     {
+      key: "clientes",
+      href: "/clientes",
+      label: "Clientes",
+      data: "Clientes",
+      Icon: Table,
+    },
+    {
       key: "authentication",
       href: "/auth/sign-in",
       label: "Authentication",

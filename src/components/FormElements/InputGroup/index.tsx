@@ -1,22 +1,16 @@
 import { cn } from "@/lib/utils";
 import { type HTMLInputTypeAttribute, useId } from "react";
+import React from "react";
 
-type InputGroupProps = {
+type InputGroupProps = React.InputHTMLAttributes<HTMLInputElement> & {
   className?: string;
   label: string;
-  placeholder: string;
-  type: HTMLInputTypeAttribute;
   fileStyleVariant?: "style1" | "style2";
-  required?: boolean;
-  disabled?: boolean;
   active?: boolean;
   handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
-  name?: string;
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";
   height?: "sm" | "default";
-  defaultValue?: string;
 };
 
 const InputGroup: React.FC<InputGroupProps> = ({
@@ -57,12 +51,11 @@ const InputGroup: React.FC<InputGroupProps> = ({
           name={props.name}
           placeholder={placeholder}
           onChange={handleChange}
-          value={props.value}
-          defaultValue={props.defaultValue}
+          {...props} // <- aqui entram onInput, onBlur, etc
           className={cn(
             "w-full rounded-lg border-[1.5px] border-stroke bg-transparent outline-none transition focus:border-primary disabled:cursor-default disabled:bg-gray-2 data-[active=true]:border-primary dark:border-dark-3 dark:bg-dark-2 dark:focus:border-primary dark:disabled:bg-dark dark:data-[active=true]:border-primary",
             type === "file"
-              ? getFileStyles(props.fileStyleVariant!)
+              ? getFileStyles(props.fileStyleVariant as "style1" | "style2")
               : "px-5.5 py-3 text-dark placeholder:text-dark-6 dark:text-white",
             props.iconPosition === "left" && "pl-12.5",
             props.height === "sm" && "py-2.5",
@@ -71,7 +64,6 @@ const InputGroup: React.FC<InputGroupProps> = ({
           disabled={disabled}
           data-active={active}
         />
-
         {icon}
       </div>
     </div>
