@@ -3,17 +3,15 @@ import { Suspense } from "react";
 import { OverviewMenuGroup } from "../(home)/_components/overview-cards/index-menu";
 import { OverviewCardsSkeleton } from "../(home)/_components/overview-cards/skeleton";
 import MenuMobile from "@/components/MenuMobile";
-import ButtonModal from "@/components/ui-elements/button-modal";
 import { InvoiceTableClient } from "@/components/Tables/filtro";
-import { getInvoiceTableData } from "@/components/Tables/fetch";
+import { getTableDataUnidade } from "@/components/Tables/fetch";
+import ModalUnidades from "@/components/ui-elements/modal-unidades";
+import { TableFilterUnidade } from "@/components/Tables/unidades";
 
-export default async function Clientes() {
-  const data = await getInvoiceTableData();
+export default async function Unidades() {
+  const data = await getTableDataUnidade();
 
-  const typedData = data.map((item) => ({
-    ...item,
-    status: item.status as "Ativo" | "Desativo" | "Excluido",
-  }));
+
 
   return (
     <>
@@ -21,14 +19,14 @@ export default async function Clientes() {
         <OverviewMenuGroup />
       </Suspense>
 
-      <Breadcrumb pageName="Clientes" />
+      <Breadcrumb pageName="Unidades" />
 
       <div className="my-5">
-        <ButtonModal />
+        <ModalUnidades />
       </div>
 
       <div className="space-y-10 pb-24">
-        <InvoiceTableClient data={typedData} />
+        <TableFilterUnidade data={data} />
       </div>
 
       <MenuMobile />

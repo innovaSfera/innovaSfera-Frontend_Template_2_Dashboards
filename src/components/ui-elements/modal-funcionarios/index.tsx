@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "./button";
-import { ShowcaseSection } from "../Layouts/showcase-section";
-import InputGroup from "../FormElements/InputGroup";
-import DatePickerOne from "../FormElements/DatePicker/DatePickerOne";
-import { Select } from "../FormElements/select";
+import { Button } from "../button";
+import { ShowcaseSection } from "../../Layouts/showcase-section";
+import InputGroup from "../../FormElements/InputGroup";
+import DatePickerOne from "../../FormElements/DatePicker/DatePickerOne";
+import { Select } from "../../FormElements/select";
 
-export default function ButtonModal() {
+export default function ModalFuncionarios() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,14 +17,21 @@ export default function ButtonModal() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="w-full max-w-3xl rounded-2xl bg-white shadow-lg dark:bg-gray-800">
             <ShowcaseSection
-              title="Novo cliente"
+              title="Novo funcionário"
               className="space-y-5.5 !p-6.5"
             >
               <div className="grid grid-cols-2 gap-4">
                 <InputGroup
                   required
-                  label="Nome"
+                  label="Nome do funcionário"
                   placeholder="Digite o nome"
+                  type="text"
+                />
+
+                <InputGroup
+                  required
+                  label="Cargo"
+                  placeholder="Digite o cargo"
                   type="text"
                 />
 
@@ -56,39 +63,22 @@ export default function ButtonModal() {
 
                 <InputGroup
                   required
-                  label="Altura"
-                  placeholder="Digite a altura"
+                  label="Email"
+                  placeholder="Digite o email"
                   type="text"
-                  onInput={(e: React.FormEvent<HTMLInputElement>) => {
-                    let value = e.currentTarget.value.replace(/\D/g, "");
-                    value = (parseInt(value) / 100)
-                      .toFixed(2)
-                      .replace(".", ","); // Ex: 70,50
-                    e.currentTarget.value = value;
-                  }}
                 />
 
                 <InputGroup
                   required
-                  label="Peso"
-                  placeholder="Digite o peso"
+                  label="Telefone"
+                  placeholder="Digite o Telefone"
                   type="text"
                   onInput={(e: React.FormEvent<HTMLInputElement>) => {
                     let value = e.currentTarget.value.replace(/\D/g, "");
-                    value = (parseInt(value) / 100)
-                      .toFixed(2)
-                      .replace(".", ","); // Ex: 70,50
+                    value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+                    value = value.replace(/(\d{5})(\d)/, "$1-$2");
                     e.currentTarget.value = value;
                   }}
-                />
-
-                <Select
-                  label="Sexo"
-                  items={[
-                    { label: "Masculino", value: "Masculino" },
-                    { label: "Feminino", value: "Feminino" },
-                  ]}
-                  defaultValue="Masculino"
                 />
 
                 <InputGroup
@@ -100,22 +90,16 @@ export default function ButtonModal() {
 
                 <InputGroup
                   required
-                  label="Email"
-                  placeholder="Digite o email"
+                  label="Username"
+                  placeholder="Digite o username"
                   type="text"
                 />
 
                 <InputGroup
                   required
-                  label="Telefone"
-                  placeholder="Digite o telefone"
-                  type="text"
-                  onInput={(e: React.FormEvent<HTMLInputElement>) => {
-                    let value = e.currentTarget.value.replace(/\D/g, "");
-                    value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
-                    value = value.replace(/(\d{5})(\d)/, "$1-$2");
-                    e.currentTarget.value = value;
-                  }}
+                  label="Password"
+                  placeholder="Digite o password"
+                  type="password"
                 />
               </div>
 
@@ -124,7 +108,7 @@ export default function ButtonModal() {
                   type="submit"
                   className="rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700"
                 >
-                  Adicionar 
+                  Adicionar
                 </button>
 
                 <button
@@ -132,7 +116,7 @@ export default function ButtonModal() {
                   onClick={() => setIsOpen(false)}
                   className="rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700"
                 >
-                  Fechar 
+                  Fechar
                 </button>
               </div>
             </ShowcaseSection>
@@ -141,7 +125,7 @@ export default function ButtonModal() {
       )}
 
       <Button
-        label="Novo cliente"
+        label="Novo funcionário"
         variant="primary"
         shape="full"
         onClick={() => setIsOpen(true)}

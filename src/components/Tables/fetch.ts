@@ -40,8 +40,64 @@ export async function getTopProducts() {
   ];
 }
 
-export async function getInvoiceTableData() {
-  // Fake delay
+export async function getTableDataUnidade() {
+  await new Promise((resolve) => setTimeout(resolve, 1400));
+
+  return [
+    {
+      name: "Iuri",
+    },
+    {
+      name: "Felipe",
+    },
+    {
+      name: "Gustavo",
+    },
+    {
+      name: "Vitoria",
+    },
+  ];
+}
+
+export async function getTableDataServicos() {
+  await new Promise((resolve) => setTimeout(resolve, 1400));
+
+  return [
+    {
+      name: "Iuri",
+    },
+    {
+      name: "Felipe",
+    },
+    {
+      name: "Gustavo",
+    },
+    {
+      name: "Vitoria",
+    },
+  ];
+}
+
+export async function getTableDataSubServicos() {
+  await new Promise((resolve) => setTimeout(resolve, 1400));
+
+  return [
+    {
+      name: "Iuri",
+    },
+    {
+      name: "Felipe",
+    },
+    {
+      name: "Gustavo",
+    },
+    {
+      name: "Vitoria",
+    },
+  ];
+}
+
+export async function getTableDataFuncionarios() {
   await new Promise((resolve) => setTimeout(resolve, 1400));
 
   return [
@@ -51,7 +107,7 @@ export async function getInvoiceTableData() {
     },
     {
       name: "Felipe",
-      status: "Desativo",
+      status: "Ativo",
     },
     {
       name: "Gustavo",
@@ -59,7 +115,61 @@ export async function getInvoiceTableData() {
     },
     {
       name: "Vitoria",
+      status: "Desativo",
+    },
+  ];
+}
+
+export async function getTableDataFinanceiro() {
+  await new Promise((resolve) => setTimeout(resolve, 1400));
+
+  return [
+    {
+      name: "Iuri",
       status: "Ativo",
+    },
+    {
+      name: "Felipe",
+      status: "Ativo",
+    },
+    {
+      name: "Gustavo",
+      status: "Excluido",
+    },
+    {
+      name: "Vitoria",
+      status: "Desativo",
+    },
+  ];
+}
+
+export async function getInvoiceTableData() {
+  await new Promise((resolve) => setTimeout(resolve, 1400));
+
+  return [
+    {
+      name: "Iuri",
+      status: "Ativo",
+      price: 12,
+      date: "2025-09-09",
+    },
+    {
+      name: "Felipe",
+      status: "Desativo",
+      price: 12,
+      date: "2025-09-09",
+    },
+    {
+      name: "Gustavo",
+      status: "Excluido",
+      price: 12,
+      date: "2025-09-09",
+    },
+    {
+      name: "Vitoria",
+      status: "Ativo",
+      price: 12,
+      date: "2025-09-09",
     },
   ];
 }

@@ -5,13 +5,29 @@ export const NAV_DATA = [
     label: "MAIN MENU",
     items: [
       {
-        title: "Menu",
-        url: "/menu",
+        title: "Menus",
+        url: "/menus",
         icon: Icons.Table,
         items: [
           {
             title: "Clientes",
             url: "/clientes",
+          },
+          {
+            title: "Unidades",
+            url: "/unidades",
+          },
+          {
+            title: "Funcionários",
+            url: "/funcionarios",
+          },
+          {
+            title: "Financeiro",
+            url: "/financeiro",
+          },
+          {
+            title: "Serviços",
+            url: "/servicos",
           },
         ],
       },
