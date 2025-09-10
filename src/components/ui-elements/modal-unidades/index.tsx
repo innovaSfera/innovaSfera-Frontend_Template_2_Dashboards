@@ -13,12 +13,12 @@ export default function ModalUnidades() {
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="w-full max-w-3xl rounded-2xl bg-white shadow-lg dark:bg-gray-800">
+          <div className="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-white shadow-lg dark:bg-gray-800">
             <ShowcaseSection
               title="Nova unidade"
               className="space-y-5.5 !p-6.5"
             >
-              <div className="grid grid-cols-1 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <InputGroup
                   required
                   label="Nome da unidade"
@@ -28,9 +28,63 @@ export default function ModalUnidades() {
 
                 <InputGroup
                   required
-                  label="Endereço"
-                  placeholder="Digite o endereço"
+                  label="CEP"
+                  placeholder="Digite o CEP"
                   type="text"
+                  onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                    let value = e.currentTarget.value.replace(/\D/g, "");
+                    value = value.replace(/^(\d{5})(\d)/, "$1-$2");
+                    e.currentTarget.value = value;
+                  }}
+                />
+
+                <InputGroup
+                  required
+                  label="Rua"
+                  placeholder="Digite a rua"
+                  type="text"
+                />
+
+                <InputGroup
+                  required
+                  label="Número"
+                  placeholder="Digite o número"
+                  type="number"
+                />
+
+                <InputGroup
+                  required
+                  label="UF"
+                  placeholder="Digite o UF"
+                  type="text"
+                />
+
+                <InputGroup
+                  required
+                  label="Telefone"
+                  placeholder="Digite o telefone"
+                  type="tel"
+                  onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                    let value = e.currentTarget.value.replace(/\D/g, "");
+                    value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+                    value = value.replace(/(\d{5})(\d)/, "$1-$2");
+                    e.currentTarget.value = value;
+                  }}
+                />
+
+                <InputGroup
+                  required
+                  label="CNPJ"
+                  placeholder="Digite o CNPJ"
+                  type="text"
+                  onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                    let value = e.currentTarget.value.replace(/\D/g, "");
+                    value = value.replace(/^(\d{2})(\d)/, "$1.$2");
+                    value = value.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+                    value = value.replace(/\.(\d{3})(\d)/, ".$1/$2");
+                    value = value.replace(/(\d{4})(\d)/, "$1-$2");
+                    e.currentTarget.value = value;
+                  }}
                 />
 
                 <InputGroup

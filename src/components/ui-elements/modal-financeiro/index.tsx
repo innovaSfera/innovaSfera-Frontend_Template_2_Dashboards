@@ -14,7 +14,7 @@ export default function ModalFinanceiro() {
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="w-full max-w-3xl rounded-2xl bg-white shadow-lg dark:bg-gray-800">
+          <div className="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-white shadow-lg dark:bg-gray-800">
             <ShowcaseSection
               title="Novo lançamento"
               className="space-y-5.5 !p-6.5"

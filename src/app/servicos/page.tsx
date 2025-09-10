@@ -15,7 +15,7 @@ export default async function Servicos() {
   const datasub = await getTableDataSubServicos();
 
   return (
-    <div className="z-0">
+    <div>
       <Suspense fallback={<OverviewCardsSkeleton />}>
         <OverviewMenuGroup />
       </Suspense>

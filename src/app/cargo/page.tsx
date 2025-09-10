@@ -3,12 +3,12 @@ import { Suspense } from "react";
 import { OverviewMenuGroup } from "../(home)/_components/overview-cards/index-menu";
 import { OverviewCardsSkeleton } from "../(home)/_components/overview-cards/skeleton";
 import MenuMobile from "@/components/MenuMobile";
-import { getTableDataUnidade } from "@/components/Tables/fetch";
-import ModalUnidades from "@/components/ui-elements/modal-unidades";
-import { TableFilterUnidade } from "@/components/Tables/unidades";
+import { getTableDataCargo } from "@/components/Tables/fetch";
+import ModalCargo from "@/components/ui-elements/modal-cargo";
+import { TableFilterCargo } from "@/components/Tables/cargo";
 
-export default async function Unidades() {
-  const data = await getTableDataUnidade();
+export default async function Cargo() {
+  const data = await getTableDataCargo();
 
   return (
     <>
@@ -16,14 +16,14 @@ export default async function Unidades() {
         <OverviewMenuGroup />
       </Suspense>
 
-      <Breadcrumb pageName="Unidades" />
+      <Breadcrumb pageName="Cargo" />
 
       <div className="my-5">
-        <ModalUnidades />
+        <ModalCargo />
       </div>
 
       <div className="space-y-10 pb-24">
-        <TableFilterUnidade data={data} />
+        <TableFilterCargo data={data} />
       </div>
 
       <MenuMobile />

@@ -17,6 +17,69 @@ export function OverviewMenuCarousel() {
 
   const menuItems = [
     {
+      key: "clientes",
+      href: "/clientes",
+      label: "Clientes",
+      data: "Clientes",
+      Icon: FourCircle,
+    },
+    {
+      key: "unidades",
+      href: "/unidades",
+      label: "Unidades",
+      data: "Unidades",
+      Icon: FourCircle,
+    },
+    {
+      key: "funcionarios",
+      href: "/funcionarios",
+      label: "Funcionários",
+      data: "Funcionários",
+      Icon: FourCircle,
+    },
+    {
+      key: "financeiro",
+      href: "/financeiro",
+      label: "Financeiro",
+      data: "Financeiro",
+      Icon: FourCircle,
+    },
+    {
+      key: "servicos",
+      href: "/servicos",
+      label: "Serviços",
+      data: "Serviços",
+      Icon: FourCircle,
+    },
+    {
+      key: "cargo",
+      href: "/cargo",
+      label: "Cargo",
+      data: "Cargo",
+      Icon: FourCircle,
+    },
+    {
+      key: "authentication",
+      href: "/auth/sign-in",
+      label: "Authentication",
+      data: "Authentication",
+      Icon: Authentication,
+    },
+    /*{
+      key: "elements",
+      href: "/ui-elements/alerts",
+      label: "Elements",
+      data: "Elements",
+      Icon: FourCircle,
+    },
+    {
+      key: "pages",
+      href: "/pages/settings",
+      label: "Pages",
+      data: "Pages",
+      Icon: Alphabet,
+    },
+    {
       key: "components",
       href: "/components",
       label: "Components",
@@ -36,35 +99,7 @@ export function OverviewMenuCarousel() {
       label: "Table",
       data: "Table",
       Icon: Table,
-    },
-    {
-      key: "clientes",
-      href: "/clientes",
-      label: "Clientes",
-      data: "Clientes",
-      Icon: Table,
-    },
-    {
-      key: "authentication",
-      href: "/auth/sign-in",
-      label: "Authentication",
-      data: "Authentication",
-      Icon: Authentication,
-    },
-    {
-      key: "elements",
-      href: "/ui-elements/alerts",
-      label: "Elements",
-      data: "Elements",
-      Icon: FourCircle,
-    },
-    {
-      key: "pages",
-      href: "/pages/settings",
-      label: "Pages",
-      data: "Pages",
-      Icon: Alphabet,
-    },
+    },*/
   ];
 
   return (

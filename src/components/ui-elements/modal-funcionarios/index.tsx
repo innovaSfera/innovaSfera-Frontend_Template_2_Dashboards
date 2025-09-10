@@ -14,13 +14,13 @@ export default function ModalFuncionarios() {
     <>
       {/* Modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="w-full max-w-3xl rounded-2xl bg-white shadow-lg dark:bg-gray-800">
+        <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/50">
+          <div className="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-white shadow-lg dark:bg-gray-800">
             <ShowcaseSection
               title="Novo funcionário"
               className="space-y-5.5 !p-6.5"
             >
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 xl:grid-cols-3">
                 <InputGroup
                   required
                   label="Nome do funcionário"
@@ -41,12 +41,19 @@ export default function ModalFuncionarios() {
                   placeholder="Digite o RG"
                   type="text"
                   onInput={(e: React.FormEvent<HTMLInputElement>) => {
-                    let value = e.currentTarget.value.replace(/\D/g, ""); // só números
+                    let value = e.currentTarget.value.replace(/\D/g, "");
                     value = value.replace(/(\d{2})(\d)/, "$1.$2");
                     value = value.replace(/(\d{3})(\d)/, "$1.$2");
                     value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
                     e.currentTarget.value = value;
                   }}
+                />
+
+                <InputGroup
+                  required
+                  label="Órgão emissoro"
+                  placeholder="Digite o endereço"
+                  type="text"
                 />
 
                 <DatePickerOne label="Data de nascimento" />
@@ -65,14 +72,14 @@ export default function ModalFuncionarios() {
                   required
                   label="Email"
                   placeholder="Digite o email"
-                  type="text"
+                  type="email"
                 />
 
                 <InputGroup
                   required
                   label="Telefone"
-                  placeholder="Digite o Telefone"
-                  type="text"
+                  placeholder="Digite o telefone"
+                  type="tel"
                   onInput={(e: React.FormEvent<HTMLInputElement>) => {
                     let value = e.currentTarget.value.replace(/\D/g, "");
                     value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
@@ -83,8 +90,41 @@ export default function ModalFuncionarios() {
 
                 <InputGroup
                   required
-                  label="Endereço"
-                  placeholder="Digite o endereço"
+                  label="CEP"
+                  placeholder="Digite o CEP"
+                  type="text"
+                  onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                    let value = e.currentTarget.value.replace(/\D/g, "");
+                    value = value.replace(/^(\d{5})(\d)/, "$1-$2");
+                    e.currentTarget.value = value;
+                  }}
+                />
+
+                <InputGroup
+                  required
+                  label="Rua"
+                  placeholder="Digite a rua"
+                  type="text"
+                />
+
+                <InputGroup
+                  required
+                  label="Número"
+                  placeholder="Digite o número"
+                  type="number"
+                />
+
+                <InputGroup
+                  required
+                  label="UF"
+                  placeholder="Digite o UF"
+                  type="text"
+                />
+
+                <InputGroup
+                  required
+                  label="Município"
+                  placeholder="Digite o município"
                   type="text"
                 />
 
@@ -100,6 +140,15 @@ export default function ModalFuncionarios() {
                   label="Password"
                   placeholder="Digite o password"
                   type="password"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 gap-4">
+                <InputGroup
+                  type="file"
+                  fileStyleVariant="style1"
+                  label="Anexar comprovante"
+                  placeholder="Attach file"
                 />
               </div>
 

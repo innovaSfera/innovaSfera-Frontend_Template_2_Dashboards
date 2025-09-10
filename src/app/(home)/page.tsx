@@ -46,12 +46,12 @@ export default async function Home({ searchParams }: PropsType) {
         />
 
         <UsedDevices
-          className="col-span-12 xl:col-span-5"
+          className="col-span-12 xl:col-span-12"
           key={extractTimeFrame("used_devices")}
           timeFrame={extractTimeFrame("used_devices")?.split(":")[1]}
         />
 
-        <RegionLabels />
+   
 
         <div className="col-span-12 grid xl:col-span-8">
           <Suspense fallback={<TopChannelsSkeleton />}>

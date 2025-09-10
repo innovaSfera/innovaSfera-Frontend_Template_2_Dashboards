@@ -5,9 +5,15 @@ export const NAV_DATA = [
     label: "MAIN MENU",
     items: [
       {
-        title: "Menus",
-        url: "/menus",
-        icon: Icons.Table,
+        title: "Dashboard",
+        url: "/",
+        icon: Icons.HomeIcon,
+        items: [],
+      },
+      {
+        title: "Menu",
+        url: "/menu",
+        icon: Icons.FourCircle,
         items: [
           {
             title: "Clientes",
@@ -29,15 +35,9 @@ export const NAV_DATA = [
             title: "Serviços",
             url: "/servicos",
           },
-        ],
-      },
-      {
-        title: "Dashboard",
-        icon: Icons.HomeIcon,
-        items: [
           {
-            title: "eCommerce",
-            url: "/",
+            title: "Cargo",
+            url: "/cargo",
           },
         ],
       },
@@ -53,7 +53,7 @@ export const NAV_DATA = [
         icon: Icons.User,
         items: [],
       },
-      {
+      /*{
         title: "Components",
         url: "/components",
         icon: Icons.FourCircle,
@@ -94,13 +94,13 @@ export const NAV_DATA = [
             url: "/pages/settings",
           },
         ],
-      },
+      },*/
     ],
   },
   {
     label: "OTHERS",
     items: [
-      {
+      /*{
         title: "Charts",
         icon: Icons.PieChart,
         items: [
@@ -123,7 +123,7 @@ export const NAV_DATA = [
             url: "/ui-elements/buttons",
           },
         ],
-      },
+      },*/
       {
         title: "Authentication",
         icon: Icons.Authentication,

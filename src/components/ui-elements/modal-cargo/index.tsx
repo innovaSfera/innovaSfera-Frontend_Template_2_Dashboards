@@ -5,7 +5,7 @@ import { Button } from "../button";
 import { ShowcaseSection } from "../../Layouts/showcase-section";
 import InputGroup from "../../FormElements/InputGroup";
 
-export default function ModalServicos() {
+export default function ModalCargo() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -14,22 +14,19 @@ export default function ModalServicos() {
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-white shadow-lg dark:bg-gray-800">
-            <ShowcaseSection
-              title="Cadastro serviço"
-              className="space-y-5.5 !p-6.5"
-            >
+            <ShowcaseSection title="Novo cargo" className="space-y-5.5 !p-6.5">
               <div className="grid grid-cols-1 gap-4">
                 <InputGroup
                   required
-                  label="Título"
-                  placeholder="Digite o título"
+                  label="Nome do cardo"
+                  placeholder="Digite o nome"
                   type="text"
                 />
 
                 <InputGroup
                   required
                   label="Descrição"
-                  placeholder="Digite a descrição"
+                  placeholder="Alguma descrição?"
                   type="text"
                 />
               </div>
@@ -56,7 +53,7 @@ export default function ModalServicos() {
       )}
 
       <Button
-        label="Cadastro serviço"
+        label="Novo cargo"
         variant="primary"
         shape="full"
         onClick={() => setIsOpen(true)}

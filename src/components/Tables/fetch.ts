@@ -59,6 +59,26 @@ export async function getTableDataUnidade() {
   ];
 }
 
+
+export async function getTableDataCargo() {
+  await new Promise((resolve) => setTimeout(resolve, 1400));
+
+  return [
+    {
+      name: "Iuri",
+    },
+    {
+      name: "Felipe",
+    },
+    {
+      name: "Gustavo",
+    },
+    {
+      name: "Vitoria",
+    },
+  ];
+}
+
 export async function getTableDataServicos() {
   await new Promise((resolve) => setTimeout(resolve, 1400));
 
