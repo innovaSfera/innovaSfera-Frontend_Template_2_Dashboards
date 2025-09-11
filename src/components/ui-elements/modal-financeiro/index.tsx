@@ -5,6 +5,7 @@ import { Button } from "../button";
 import { ShowcaseSection } from "../../Layouts/showcase-section";
 import InputGroup from "../../FormElements/InputGroup";
 import { Select } from "../../FormElements/select";
+import { Plus } from "lucide-react";
 
 export default function ModalFinanceiro() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function ModalFinanceiro() {
               title="Novo lançamento"
               className="space-y-5.5 !p-6.5"
             >
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
                 <InputGroup
                   required
                   label="Nome da transação"
@@ -118,10 +119,10 @@ export default function ModalFinanceiro() {
                 />
               </div>
 
-              <div className="mt-6 flex gap-4">
+              <div className="mt-6 flex flex-wrap gap-4">
                 <button
                   type="submit"
-                  className="rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+                  className="w-full rounded-lg bg-primary px-4 py-2 text-white lg:w-auto"
                 >
                   Adicionar
                 </button>
@@ -129,7 +130,7 @@ export default function ModalFinanceiro() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+                  className="w-full rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700 lg:w-auto"
                 >
                   Fechar
                 </button>
@@ -141,6 +142,7 @@ export default function ModalFinanceiro() {
 
       <Button
         label="Novo lançamento"
+        icon={<Plus />}
         variant="primary"
         shape="full"
         onClick={() => setIsOpen(true)}

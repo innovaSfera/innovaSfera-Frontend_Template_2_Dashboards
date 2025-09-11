@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "../button";
 import { ShowcaseSection } from "../../Layouts/showcase-section";
 import InputGroup from "../../FormElements/InputGroup";
+import { Plus } from "lucide-react";
 
 export default function ModalCargo() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,10 +32,10 @@ export default function ModalCargo() {
                 />
               </div>
 
-              <div className="mt-6 flex gap-4">
+              <div className="mt-6 flex flex-wrap gap-4">
                 <button
                   type="submit"
-                  className="rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+                  className="w-full rounded-lg bg-primary px-4 py-2 text-white lg:w-auto"
                 >
                   Adicionar
                 </button>
@@ -42,7 +43,7 @@ export default function ModalCargo() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+                  className="w-full rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700 lg:w-auto"
                 >
                   Fechar
                 </button>
@@ -54,6 +55,7 @@ export default function ModalCargo() {
 
       <Button
         label="Novo cargo"
+        icon={<Plus />}
         variant="primary"
         shape="full"
         onClick={() => setIsOpen(true)}

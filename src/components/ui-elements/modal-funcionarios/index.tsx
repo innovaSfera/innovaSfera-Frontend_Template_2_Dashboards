@@ -6,6 +6,7 @@ import { ShowcaseSection } from "../../Layouts/showcase-section";
 import InputGroup from "../../FormElements/InputGroup";
 import DatePickerOne from "../../FormElements/DatePicker/DatePickerOne";
 import { Select } from "../../FormElements/select";
+import { Plus } from "lucide-react";
 
 export default function ModalFuncionarios() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function ModalFuncionarios() {
               title="Novo funcionário"
               className="space-y-5.5 !p-6.5"
             >
-              <div className="grid grid-cols-2 gap-4 xl:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
                 <InputGroup
                   required
                   label="Nome do funcionário"
@@ -152,10 +153,10 @@ export default function ModalFuncionarios() {
                 />
               </div>
 
-              <div className="mt-6 flex gap-4">
+              <div className="mt-6 flex flex-wrap gap-4">
                 <button
                   type="submit"
-                  className="rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+                  className="w-full rounded-lg bg-primary px-4 py-2 text-white lg:w-auto"
                 >
                   Adicionar
                 </button>
@@ -163,7 +164,7 @@ export default function ModalFuncionarios() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+                  className="w-full rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700 lg:w-auto"
                 >
                   Fechar
                 </button>
@@ -175,6 +176,7 @@ export default function ModalFuncionarios() {
 
       <Button
         label="Novo funcionário"
+        icon={<Plus />}
         variant="primary"
         shape="full"
         onClick={() => setIsOpen(true)}

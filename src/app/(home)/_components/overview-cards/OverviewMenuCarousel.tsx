@@ -65,7 +65,7 @@ export function OverviewMenuCarousel() {
       data: "Authentication",
       Icon: Authentication,
     },
-    /*{
+    {
       key: "elements",
       href: "/ui-elements/alerts",
       label: "Elements",
@@ -99,7 +99,7 @@ export function OverviewMenuCarousel() {
       label: "Table",
       data: "Table",
       Icon: Table,
-    },*/
+    },
   ];
 
   return (

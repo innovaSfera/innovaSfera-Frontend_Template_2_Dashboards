@@ -53,8 +53,9 @@ export function Button({
       className={buttonVariants({ variant, shape, size, className })}
       {...props}
     >
-      {icon && <span>{icon}</span>}
-      {label}
+      {icon && <span className="text-lg">{icon}</span>}
+      {/* Esconde o label em telas pequenas e mostra a partir de `sm` */}
+      <span className="hidden sm:inline">{label}</span>
     </button>
   );
 }

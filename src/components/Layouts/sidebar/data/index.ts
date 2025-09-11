@@ -53,7 +53,7 @@ export const NAV_DATA = [
         icon: Icons.User,
         items: [],
       },
-      /*{
+      {
         title: "Components",
         url: "/components",
         icon: Icons.FourCircle,
@@ -94,13 +94,13 @@ export const NAV_DATA = [
             url: "/pages/settings",
           },
         ],
-      },*/
+      },
     ],
   },
   {
     label: "OTHERS",
     items: [
-      /*{
+      {
         title: "Charts",
         icon: Icons.PieChart,
         items: [
@@ -123,7 +123,7 @@ export const NAV_DATA = [
             url: "/ui-elements/buttons",
           },
         ],
-      },*/
+      },
       {
         title: "Authentication",
         icon: Icons.Authentication,
