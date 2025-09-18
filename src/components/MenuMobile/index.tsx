@@ -46,7 +46,7 @@ export default function BottomMenu() {
         </div>
       )}
 
-      <div className="fixed bottom-0 left-0 flex w-full flex-col items-center justify-between bg-[#f9f9f9] text-dark dark:bg-gray-dark dark:text-white xl:hidden">
+      <div className="fixed bottom-0 left-0 z-1 flex w-full flex-col items-center justify-between bg-[#f9f9f9] text-dark dark:bg-gray-dark dark:text-white xl:hidden">
         <div className="flex w-full items-start justify-between">
           {/* Botão central */}
           <div className="absolute -top-7 left-1/2 z-50 -translate-x-1/2">

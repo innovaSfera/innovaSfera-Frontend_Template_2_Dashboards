@@ -81,7 +81,7 @@ type DropdownContentProps = {
 
 export function DropdownContent({
   children,
-  align = "center",
+  align = "end",
   className,
 }: DropdownContentProps) {
   const { isOpen, handleClose } = useDropdownContext();
