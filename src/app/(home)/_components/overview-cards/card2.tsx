@@ -10,7 +10,7 @@ type PropsType = {
 export function OverviewCard2({ data, Icon, isActive = false }: PropsType) {
   return (
     <div
-      className={`flex items-center justify-center flex-col rounded-[10px] p-6 shadow-1 transition-all
+      className={`flex items-center justify-center flex-col rounded-[10px] p-5 shadow-1 transition-all
         ${
           isActive
             ? "bg-[rgba(87,80,241,0.07)] border border-primary text-primary"
@@ -18,11 +18,11 @@ export function OverviewCard2({ data, Icon, isActive = false }: PropsType) {
         }
       `}
     >
-      <Icon className="size-6" />
+      <Icon className="size-5" />
 
-      <div className="mt-6">
+      <div className="mt-4">
         <dl>
-          <dt className="mb-1.5 font-medium text-lg">{data}</dt>
+          <dt className="mb-1 font-medium text-md">{data}</dt>
         </dl>
       </div>
     </div>
