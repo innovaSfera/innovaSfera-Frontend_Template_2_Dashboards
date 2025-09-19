@@ -21,9 +21,9 @@ export default async function Clientes() {
         <OverviewMenuGroup />
       </Suspense>
 
-      <Breadcrumb pageName="Clientes" />
+      <div className="my-6 flex w-full items-start justify-between gap-6 xl:flex-col">
+        <Breadcrumb pageName="Clientes" />
 
-      <div className="my-5">
         <ButtonModal />
       </div>
 
@@ -34,6 +34,4 @@ export default async function Clientes() {
       <MenuMobile />
     </>
   );
-};
-
-
+}

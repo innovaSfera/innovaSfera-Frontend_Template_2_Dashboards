@@ -20,10 +20,9 @@ export default async function Servicos() {
         <OverviewMenuGroup />
       </Suspense>
 
-      <Breadcrumb pageName="Serviços" />
+      <div className="my-6 flex w-full items-start justify-between gap-6 xl:flex-col">
+        <Breadcrumb pageName="Serviços" />
 
-      {/* Serviço */}
-      <div className="my-5">
         <ModalServicos />
       </div>
 
@@ -31,8 +30,9 @@ export default async function Servicos() {
         <TableFilterServicos data={data} />
       </div>
 
-      {/* Sub-serviço */}
-      <div className="my-5">
+      <div className="my-6 flex w-full items-start justify-between gap-6 xl:flex-col">
+        <Breadcrumb pageName="Sub-serviços" />
+
         <ModalSubServicos />
       </div>
 

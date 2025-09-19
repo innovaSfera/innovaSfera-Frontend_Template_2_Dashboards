@@ -21,9 +21,9 @@ export default async function Financeiro() {
         <OverviewMenuGroup />
       </Suspense>
 
-      <Breadcrumb pageName="Financeiro" />
+      <div className="my-6 flex w-full items-start justify-between gap-6 xl:flex-col">
+        <Breadcrumb pageName="Financeiro" />
 
-      <div className="my-5">
         <ModalFinanceiro />
       </div>
 

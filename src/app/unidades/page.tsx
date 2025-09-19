@@ -16,9 +16,9 @@ export default async function Unidades() {
         <OverviewMenuGroup />
       </Suspense>
 
-      <Breadcrumb pageName="Unidades" />
+      <div className="my-6 flex w-full items-start justify-between gap-6 xl:flex-col">
+        <Breadcrumb pageName="Unidades" />
 
-      <div className="my-5">
         <ModalUnidades />
       </div>
 

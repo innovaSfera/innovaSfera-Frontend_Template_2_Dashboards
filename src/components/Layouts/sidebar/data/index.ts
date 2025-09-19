@@ -125,7 +125,7 @@ export const NAV_DATA = [
         ],
       },
       {
-        title: "Authentication",
+        title: "Login",
         icon: Icons.Authentication,
         items: [
           {

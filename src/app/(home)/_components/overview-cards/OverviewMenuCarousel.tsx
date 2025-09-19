@@ -61,8 +61,8 @@ export function OverviewMenuCarousel() {
     {
       key: "authentication",
       href: "/auth/sign-in",
-      label: "Authentication",
-      data: "Authentication",
+      label: "Login",
+      data: "Login",
       Icon: Authentication,
     },
     {

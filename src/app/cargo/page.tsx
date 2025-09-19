@@ -16,9 +16,9 @@ export default async function Cargo() {
         <OverviewMenuGroup />
       </Suspense>
 
-      <Breadcrumb pageName="Cargo" />
+      <div className="my-6 flex w-full items-start justify-between gap-6 xl:flex-col">
+        <Breadcrumb pageName="Cargo" />
 
-      <div className="my-5">
         <ModalCargo />
       </div>
 

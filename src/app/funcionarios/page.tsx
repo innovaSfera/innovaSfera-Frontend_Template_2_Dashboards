@@ -21,9 +21,9 @@ export default async function Funcionarios() {
         <OverviewMenuGroup />
       </Suspense>
 
-      <Breadcrumb pageName="Funcionários" />
+      <div className="my-6 flex w-full items-start justify-between gap-6 xl:flex-col">
+        <Breadcrumb pageName="Funcionários" />
 
-      <div className="my-5">
         <ModalFuncionarios />
       </div>
 
